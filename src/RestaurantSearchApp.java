@@ -41,8 +41,8 @@ public class RestaurantSearchApp {
 		if (Utils.isValidString(searchQuery)) {
 			RestaurantsDataProvider restaurantsDataProvider = RestaurantsDataProvider
 					.getRestaurantsDataProviderrInstance();
-			restaurantsDataProvider.searchAndSortRestaurants(searchQuery, SEARCH_CRITERIA.SEARCH_BY_NAME,
-					SORT_CRITERIA.SORT_BY_CATEGORY);
+			restaurantsDataProvider.searchAndSortRestaurants(searchQuery, SEARCH_CRITERIA.SEARCH_BY_CATEGORY,
+					SORT_CRITERIA.SORT_BY_RATING);
 			System.out.println("Do you want to continue Y/N ?");
 			String yesOrNo = scanner.nextLine();
 			checkYesNoValidityAndTakeAction(yesOrNo);
