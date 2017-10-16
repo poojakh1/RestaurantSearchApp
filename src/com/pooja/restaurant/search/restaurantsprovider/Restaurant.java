@@ -35,13 +35,14 @@ public class Restaurant implements Comparable<Restaurant> {
 	// Compare based on Rating By default
 	@Override
 	public int compareTo(Restaurant restaurant) {
-		int result;
-		if (this.rating < restaurant.rating) {
-			result = 1;
-		} else if (this.rating > restaurant.rating) {
+		int result = Double.compare(this.rating, restaurant.rating);
+		if (result == 1) {
 			result = -1;
-		} else {
-			result = 0;
+		} else if (result == -1) {
+			result = 1;
+		} else if (result == 0) {
+			// result is zero means ratings are equal, so sorting based on name
+			result = this.name.compareTo(restaurant.name);
 		}
 		return result;
 	}
